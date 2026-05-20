@@ -734,12 +734,52 @@ function setupEventListeners() {
 }
 
 // ==========================================================================
+// PRÉ-CARREGAMENTO DE IMAGENS (PRELOAD)
+// ==========================================================================
+function preloadGameAssets() {
+    const backgrounds = scriptData
+        .map(scene => scene.bg)
+        .filter(bg => bg && typeof bg === 'string');
+        
+    const sprites = Object.values(charSprites)
+        .filter(path => path && typeof path === 'string');
+        
+    const uiAssets = [
+        'assets/img/bg_inicial.jpeg',
+        'assets/img/ui_caixa_dialogo.png',
+        'assets/img/ui_caixa_alternativa.png',
+        'assets/img/btn_alt_a.png',
+        'assets/img/btn_alt_b.png',
+        'assets/img/btn_alt_c.png',
+        'assets/img/btn_iniciar.png',
+        'assets/img/btn_conteudo.png',
+        'assets/img/banner_fim_jogo.png',
+        'assets/img/banner_finalizacao.png',
+        'assets/img/btn_vol_on.png',
+        'assets/img/btn_vol_off.png'
+    ];
+    
+    // Une tudo em uma lista única sem duplicados
+    const allAssets = [...new Set([...backgrounds, ...sprites, ...uiAssets])];
+    
+    console.log(`[Preload] Iniciando carregamento de ${allAssets.length} imagens em segundo plano...`);
+    
+    allAssets.forEach(url => {
+        const img = new Image();
+        img.src = url;
+    });
+}
+
+// ==========================================================================
 // CONTROLES DE INTERAÇÃO E ÁUDIO INICIAL
 // ==========================================================================
 window.onload = () => {
     // Carrega fundo da tela inicial
     dom.bgLayer.style.backgroundImage = "url('assets/img/bg_inicial.jpeg')";
     setupEventListeners();
+    
+    // Pré-carrega todas as imagens para evitar atrasos e tela preta na hospedagem (Vercel)
+    preloadGameAssets();
     
     // Tenta iniciar a música agressivamente no primeiro clique ou toque na tela do menu
     const enableAudioOnInteraction = () => {
