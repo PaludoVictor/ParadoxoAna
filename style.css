@@ -133,7 +133,7 @@ body {
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 24px 35px 20px 42px; /* Margens internas ajustadas para a caixa compactada */
+    padding: 24px 35px 20px 75px; /* Margens internas ajustadas para afastar a moldura esquerda */
     position: relative;
     cursor: pointer;
     display: flex;
@@ -144,7 +144,7 @@ body {
 .speaker-name {
     position: absolute;
     top: 3px;
-    left: 42px; /* Alinhado horizontalmente com a margem do texto pixel art */
+    left: 75px; /* Alinhado horizontalmente com a margem do texto pixel art */
     background: rgba(15, 15, 22, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 2px 14px;
@@ -531,4 +531,23 @@ body {
     .modal-content {
         padding-top: 10%;
     }
+}
+
+/* ==========================================================================
+   EFEITOS DO BOSS FINAL (ESTADO 8)
+   ========================================================================== */
+.boss-theme {
+    filter: hue-rotate(280deg) saturate(2) contrast(1.2) drop-shadow(0 0 15px rgba(220, 38, 38, 0.4));
+    transition: filter 0.8s ease-in-out;
+}
+
+.shake-anim {
+    animation: shake 0.45s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-3px, 0, 0); }
+    20%, 80% { transform: translate3d(5px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-7px, 0, 0); }
+    40%, 60% { transform: translate3d(7px, 0, 0); }
 }

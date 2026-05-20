@@ -42,13 +42,13 @@ const scriptData = [
     },
 
     // ----------------------------------------------------------------------
-    // ESTADO 3: Ato 1 - Retas Paralelas (Índices 3 - 5)
+    // ESTADO 3: Fase de Conceito 1 (O Ensino das Paralelas)
     // ----------------------------------------------------------------------
     {
         state: 3,
-        bg: 'assets/img/bg_ato1.png',
+        bg: 'assets/img/bg_conceito1.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Retas paralelas nunca se cruzam. Mas observem essa transversal cortando as duas!',
+        text: 'Antes de testar vocês, devem compreender a base da realidade. Duas retas são paralelas se estiverem no mesmo plano e nunca compartilharem um único ponto.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -56,9 +56,9 @@ const scriptData = [
     },
     {
         state: 3,
-        bg: 'assets/img/bg_ato1.png',
+        bg: 'assets/img/bg_conceito1.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Os ângulos alternos internos formados são representados por 5x - 20° e 3x + 40°.',
+        text: "Mas o que acontece quando uma terceira reta, chamada de 'Transversal', corta essas duas paralelas? Cria-se magia angular.",
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -66,24 +66,19 @@ const scriptData = [
     },
     {
         state: 3,
-        bg: 'assets/img/bg_ato1.png',
+        bg: 'assets/img/bg_conceito1.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Qual é a medida exata desse ângulo?',
+        text: 'Os ângulos que estão do mesmo lado da transversal e na mesma posição chamam-se Ângulos Correspondentes. Eles são SEMPRE iguais.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
-        type: 'question',
-        options: {
-            A: { text: '30°', isCorrect: false },
-            B: { text: '130°', isCorrect: true },
-            C: { text: '150°', isCorrect: false }
-        }
+        type: 'dialogue'
     },
     {
         state: 3,
-        bg: 'assets/img/bg_ato1.png',
+        bg: 'assets/img/bg_conceito1.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Exato... 5x - 20 = 3x + 40. O x vale 30, logo o ângulo é 130°. Vocês passaram do primeiro portão.',
+        text: 'Além disso, temos os Ângulos Alternos Internos. Estão em lados opostos da transversal, na zona interna. Eles também são perfeitamente iguais!',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -91,13 +86,13 @@ const scriptData = [
     },
 
     // ----------------------------------------------------------------------
-    // ESTADO 4: Ato 2 - Retas Concorrentes (Índices 7 - 9)
+    // ESTADO 4: Ato 1 - O Desafio das Paralelas (Cálculo)
     // ----------------------------------------------------------------------
     {
         state: 4,
-        bg: 'assets/img/bg_ato2.png',
+        bg: 'assets/img/bg_ato1.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Aqui os caminhos colidem! Retas concorrentes cruzam-se em apenas um ponto.',
+        text: 'Vamos aplicar esta lei! Os ângulos alternos internos deste cruzamento são descritos por 5x - 20° e 3x + 40°.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -105,19 +100,62 @@ const scriptData = [
     },
     {
         state: 4,
-        bg: 'assets/img/bg_ato2.png',
+        bg: 'assets/img/bg_ato1.png',
         speaker: 'Professora Ana Vilã',
-        text: 'A Reta da Verdade obedece y = 2x + 1. A Reta da Ilusão obedece y = -x + 4.',
+        text: 'Sabendo que eles são iguais, qual é o valor de x e a medida exata deste ângulo?',
+        charLeft: 'brenda',
+        charRight: 'ana_vila',
+        activeSpeaker: 'right',
+        type: 'question',
+        options: {
+            A: { text: 'x = 20, Ângulo = 80°', isCorrect: false },
+            B: { text: 'x = 30, Ângulo = 130°', isCorrect: true },
+            C: { text: 'x = 40, Ângulo = 150°', isCorrect: false }
+        }
+    },
+
+    // ----------------------------------------------------------------------
+    // ESTADO 5: Fase de Conceito 2 (O Choque das Concorrentes)
+    // ----------------------------------------------------------------------
+    {
+        state: 5,
+        bg: 'assets/img/bg_conceito2.png',
+        speaker: 'Professora Ana Vilã',
+        text: 'Passaram... Mas o universo nem sempre é paralelo. Às vezes, os caminhos colidem em um único ponto: as Retas Concorrentes.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
         type: 'dialogue'
     },
     {
-        state: 4,
+        state: 5,
+        bg: 'assets/img/bg_conceito2.png',
+        speaker: 'Professora Ana Vilã',
+        text: "Quando duas retas se cruzam, formam quatro ângulos. Os que estão de frente um para o outro chamam-se 'Opostos pelo Vértice' (OPV). Eles são como espelhos, têm exatamente a mesma medida.",
+        charLeft: 'brenda',
+        charRight: 'ana_vila',
+        activeSpeaker: 'right',
+        type: 'dialogue'
+    },
+
+    // ----------------------------------------------------------------------
+    // ESTADO 6: Ato 2 - O Ponto de Impacto (Cálculo)
+    // ----------------------------------------------------------------------
+    {
+        state: 6,
         bg: 'assets/img/bg_ato2.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Em qual coordenada (x, y) exata elas colidem?',
+        text: 'A geometria analítica mostra onde o choque acontece. A Reta da Verdade obedece a y = 2x + 1. A Reta da Ilusão obedece a y = -x + 4.',
+        charLeft: 'brenda',
+        charRight: 'ana_vila',
+        activeSpeaker: 'right',
+        type: 'dialogue'
+    },
+    {
+        state: 6,
+        bg: 'assets/img/bg_ato2.png',
+        speaker: 'Professora Ana Vilã',
+        text: 'As duas são concorrentes. Em qual coordenada (x, y) exata do plano elas colidem?',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -128,45 +166,35 @@ const scriptData = [
             C: { text: '(-1, 5)', isCorrect: false }
         }
     },
-    {
-        state: 4,
-        bg: 'assets/img/bg_ato2.png',
-        speaker: 'Professora Ana Vilã',
-        text: 'Cálculo preciso! Igualando os dois "y", achamos x=1 e y=3. Vamos ao último e mais perigoso teste.',
-        charLeft: 'brenda',
-        charRight: 'ana_vila',
-        activeSpeaker: 'right',
-        type: 'dialogue'
-    },
 
     // ----------------------------------------------------------------------
-    // ESTADO 5: Ato 3 - Retas Perpendiculares (Índices 11 - 13)
+    // ESTADO 7: Ato 3 - A Perfeição Perpendicular
     // ----------------------------------------------------------------------
     {
-        state: 5,
+        state: 7,
         bg: 'assets/img/bg_ato3.png',
         speaker: 'Professora Ana Vilã',
-        text: 'A realeza da geometria. Para formar perfeitos 90 graus, a regra é m1 * m2 = -1.',
+        text: 'As concorrentes perpendiculares são a elite! Elas cruzam-se formando exatamente quatro ângulos retos de 90°.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
         type: 'dialogue'
     },
     {
-        state: 5,
+        state: 7,
         bg: 'assets/img/bg_ato3.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Minha reta tem coeficiente m = 1/2. Vocês precisam criar uma perpendicular passando pela origem (0,0)!',
+        text: 'A lei secreta para isto acontecer é multiplicar os seus coeficientes angulares (m1 * m2) e o resultado tem de ser obrigatoriamente -1.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
         type: 'dialogue'
     },
     {
-        state: 5,
+        state: 7,
         bg: 'assets/img/bg_ato3.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Qual é a equação da reta de vocês?',
+        text: 'Se a minha reta tem a equação y = 1/2x + 3, qual deve ser a equação da reta de vocês para ser perpendicular e passar na origem (0,0)?',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -177,22 +205,92 @@ const scriptData = [
             C: { text: 'y = -2x', isCorrect: true }
         }
     },
+
+    // ----------------------------------------------------------------------
+    // ESTADO 8: FINAL BOSS - O Paradoxo do ENEM
+    // ----------------------------------------------------------------------
     {
-        state: 5,
+        state: 8,
         bg: 'assets/img/bg_ato3.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Impressionante... O coeficiente angular é o inverso negativo (-2). O portal está aberto!',
+        text: 'Tolos! Pensaram que as continhas simples seriam o fim? O mundo real é muito mais complexo. Preparem-se para o teste nacional!',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
-        type: 'dialogue'
+        type: 'dialogue',
+        bossEffect: true,
+        shakeEffect: true
+    },
+    {
+        state: 8,
+        bg: 'assets/img/bg_ato3.png',
+        speaker: 'Professora Ana Vilã',
+        text: '(Adaptação ENEM) Dois engenheiros planejaram duas avenidas retilíneas. A Avenida A segue a equação 2x - y + 3 = 0.',
+        charLeft: 'brenda',
+        charRight: 'ana_vila',
+        activeSpeaker: 'right',
+        type: 'dialogue',
+        bossEffect: true,
+        shakeEffect: true
+    },
+    {
+        state: 8,
+        bg: 'assets/img/bg_ato3.png',
+        speaker: 'Professora Ana Vilã',
+        text: 'A Avenida B foi registrada como 4x - 2y - 5 = 0.',
+        charLeft: 'brenda',
+        charRight: 'ana_vila',
+        activeSpeaker: 'right',
+        type: 'dialogue',
+        bossEffect: true,
+        shakeEffect: true
+    },
+    {
+        state: 8,
+        bg: 'assets/img/bg_ato3.png',
+        speaker: 'Professora Ana Vilã',
+        text: 'Analisando apenas as equações, o que o plano afirma sobre a posição destas avenidas?',
+        charLeft: 'brenda',
+        charRight: 'ana_vila',
+        activeSpeaker: 'right',
+        type: 'question',
+        bossEffect: true,
+        shakeEffect: true,
+        options: {
+            A: { text: 'São perpendiculares e cruzam-se formando 90°.', isCorrect: false },
+            B: { text: 'São estritamente paralelas, não haverá cruzamento.', isCorrect: true },
+            C: { text: 'São concorrentes oblíquas, cruzando-se em um ponto.', isCorrect: false }
+        }
+    },
+    {
+        state: 8,
+        bg: 'assets/img/bg_ato3.png',
+        speaker: 'Professora Ana Vilã',
+        text: 'IMPOSSÍVEL! Vocês isolaram o \'y\' e perceberam que ambas tinham a inclinação igual a 2?! Vocês dominam completamente a geometria...',
+        charLeft: 'brenda',
+        charRight: 'ana_vila',
+        activeSpeaker: 'right',
+        type: 'dialogue',
+        bossEffect: true,
+        shakeEffect: true
+    },
+    {
+        state: 8,
+        bg: 'assets/img/bg_inicial.jpeg',
+        speaker: 'Professora Ana Vilã',
+        text: 'O conhecimento destruiu meu domínio. O portal... abriu-se!',
+        charLeft: 'brenda',
+        charRight: 'ana_vila',
+        activeSpeaker: 'right',
+        type: 'dialogue',
+        bossEffect: false
     },
 
     // ----------------------------------------------------------------------
-    // ESTADO 6: Epílogo e Finalização (Índices 15 - 16)
+    // ESTADO 9: Epílogo e Finalização (Índices 15 - 16)
     // ----------------------------------------------------------------------
     {
-        state: 6,
+        state: 9,
         bg: 'assets/img/bg_inicial.jpeg', // Retorna ao fundo inicial
         speaker: 'Brenda',
         text: 'Em um piscar de olhos, voltamos para a sala...',
@@ -202,7 +300,7 @@ const scriptData = [
         type: 'dialogue'
     },
     {
-        state: 6,
+        state: 9,
         bg: 'assets/img/bg_inicial.jpeg',
         speaker: 'Brenda',
         text: 'A Professora Ana me olha do quadro. Eu guardo o celular no bolso imediatamente.',
@@ -301,7 +399,7 @@ function toggleVolume() {
 }
 
 function startBGM() {
-    if (!gameState.bgmStarted && !gameState.isMuted) {
+    if (!gameState.isMuted) {
         dom.bgm.play()
             .then(() => {
                 gameState.bgmStarted = true;
@@ -352,6 +450,21 @@ function renderScene() {
 
     // 1. Atualizar Estado Atual do Jogo
     gameState.currentState = scene.state;
+
+    // 1.5. Aplicar Efeitos do Boss Final (Filtros e Tremor)
+    if (scene.bossEffect) {
+        dom.gameContainer.classList.add('boss-theme');
+    } else {
+        dom.gameContainer.classList.remove('boss-theme');
+    }
+
+    if (scene.shakeEffect) {
+        dom.gameContainer.classList.remove('shake-anim');
+        void dom.gameContainer.offsetWidth; // Força reflow no DOM para resetar e disparar a animação
+        dom.gameContainer.classList.add('shake-anim');
+    } else {
+        dom.gameContainer.classList.remove('shake-anim');
+    }
 
     // 2. Atualizar Imagem de Fundo (Backdrop)
     dom.bgLayer.style.backgroundImage = `url('${scene.bg}')`;
@@ -480,6 +593,8 @@ function startDialogueGame() {
     dom.introVideo.classList.add('hide');
     dom.gameOverScreen.classList.add('hide');
     dom.finalizationScreen.classList.add('hide');
+    dom.gameContainer.classList.remove('boss-theme');
+    dom.gameContainer.classList.remove('shake-anim');
     
     renderScene();
 }
@@ -489,6 +604,9 @@ function playIntroVideo() {
     gameState.currentState = 1;
     dom.menuScreen.classList.add('hide');
     dom.introVideo.classList.remove('hide');
+    
+    // Pausar a música de fundo durante a introdução em vídeo
+    dom.bgm.pause();
     
     // Reset e reprodução do vídeo
     dom.introVideo.currentTime = 0;
@@ -543,6 +661,8 @@ function showFinalizationScreen() {
     dom.dialogueContainer.classList.add('hide');
     dom.charLeft.classList.add('hide');
     dom.charRight.classList.add('hide');
+    dom.gameContainer.classList.remove('boss-theme');
+    dom.gameContainer.classList.remove('shake-anim');
     dom.finalizationScreen.classList.remove('hide');
 }
 
@@ -556,6 +676,8 @@ function resetGameToMenu() {
     
     // Reset da imagem de fundo para a tela inicial
     dom.bgLayer.style.backgroundImage = "url('assets/img/bg_inicial.jpeg')";
+    dom.gameContainer.classList.remove('boss-theme');
+    dom.gameContainer.classList.remove('shake-anim');
     
     dom.finalizationScreen.classList.add('hide');
     dom.menuScreen.classList.remove('hide');
@@ -612,7 +734,7 @@ function setupEventListeners() {
 }
 
 // ==========================================================================
-// INICIALIZAÇÃO DE BOOTSTRAP DO JOGO
+// CONTROLES DE INTERAÇÃO E ÁUDIO INICIAL
 // ==========================================================================
 window.onload = () => {
     // Carrega fundo da tela inicial
