@@ -21,14 +21,17 @@ body {
     padding: 0;
 }
 
-/* Container Principal do Jogo - Tela Inteira */
+/* Container Principal do Jogo - Proporção 16:9 dinâmica */
 .game-container {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 56.25vw; /* 16:9 Aspect Ratio (1080/1920) */
+    max-height: 100vh;
+    max-width: 177.78vh; /* 16:9 Aspect Ratio (1920/1080) */
     background-color: #000;
     overflow: hidden;
     user-select: none;
+    container-type: size; /* Habilita Container Queries */
 }
 
 /* ==========================================================================
@@ -122,7 +125,7 @@ body {
    ========================================================================== */
 .dialogue-box-container {
     width: 48%; /* Mais estreita, perfeitamente posicionada no vão central entre os personagens */
-    height: clamp(125px, 20vh, 160px);
+    height: clamp(125px, 20cqh, 160px);
     z-index: 5;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -149,7 +152,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 2px 14px;
     font-family: 'VT323', monospace; /* Fonte Pixel Art clássica */
-    font-size: clamp(1.2rem, 2.2vw, 1.5rem); /* Tamanho aumentado para legibilidade */
+    font-size: clamp(1.2rem, 2.2cqw, 1.5rem); /* Tamanho aumentado para legibilidade */
     font-weight: 700;
     color: #fbbf24; /* Tom dourado */
     border-radius: 4px;
@@ -160,7 +163,7 @@ body {
 
 .dialogue-text {
     font-family: 'VT323', monospace; /* Fonte Pixel Art clássica */
-    font-size: clamp(1.35rem, 2.5vw, 1.8rem); /* Texto de diálogo em destaque */
+    font-size: clamp(1.35rem, 2.5cqw, 1.8rem); /* Texto de diálogo em destaque */
     line-height: 1.25;
     color: #e5e7eb;
     margin-top: 10px;
@@ -172,7 +175,7 @@ body {
     position: absolute;
     bottom: 15%;
     right: 4%;
-    font-size: clamp(0.7rem, 1.4vw, 1rem);
+    font-size: clamp(0.7rem, 1.4cqw, 1rem);
     color: #fbbf24;
     animation: bounce 1s infinite alternate;
 }
@@ -208,7 +211,7 @@ body {
 
 .game-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+    font-size: clamp(2.2rem, 5.5cqw, 4.2rem);
     font-weight: 800;
     color: #ffffff;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(251, 191, 36, 0.2);
@@ -217,7 +220,7 @@ body {
 }
 
 .game-subtitle {
-    font-size: clamp(0.85rem, 1.8vw, 1.3rem);
+    font-size: clamp(0.85rem, 1.8cqw, 1.3rem);
     color: #cbd5e1;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -231,8 +234,8 @@ body {
 }
 
 .menu-btn {
-    width: clamp(165px, 15vw, 240px);
-    height: clamp(52px, 4.6vw, 75px);
+    width: clamp(165px, 15cqw, 240px);
+    height: clamp(52px, 4.6cqw, 75px);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -284,7 +287,7 @@ body {
 }
 
 .opt-icon-outside {
-    height: clamp(35px, 5.5vh, 45px);
+    height: clamp(35px, 5.5cqh, 45px);
     width: auto;
     object-fit: contain;
     margin-right: 18px; /* Ícone fica FORA e separado da caixa */
@@ -293,7 +296,7 @@ body {
 
 .option-btn-inside {
     flex-grow: 1;
-    height: clamp(52px, 7vh, 65px);
+    height: clamp(52px, 7cqh, 65px);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -303,7 +306,7 @@ body {
 }
 
 .opt-text {
-    font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+    font-size: clamp(0.85rem, 1.6cqw, 1.05rem);
     font-weight: 600;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
@@ -408,7 +411,7 @@ body {
 
 .modal-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-size: clamp(1.4rem, 2.5cqw, 2rem);
     color: #ffffff;
     margin-bottom: 5px;
     border-bottom: 2px solid rgba(251, 191, 36, 0.2);
@@ -416,7 +419,7 @@ body {
 }
 
 .modal-intro {
-    font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+    font-size: clamp(0.75rem, 1.4cqw, 0.95rem);
     color: #9ca3af;
     margin-bottom: 20px;
 }
@@ -446,14 +449,14 @@ body {
 }
 
 .bento-card h3 {
-    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+    font-size: clamp(0.85rem, 1.5cqw, 1.05rem);
     color: #fbbf24;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .bento-card p {
-    font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+    font-size: clamp(0.7rem, 1.3cqw, 0.85rem);
     color: #cbd5e1;
     line-height: 1.5;
     margin-bottom: 10px;
@@ -461,7 +464,7 @@ body {
 
 .bento-card ul {
     list-style: none;
-    font-size: clamp(0.65rem, 1.25vw, 0.8rem);
+    font-size: clamp(0.65rem, 1.25cqw, 0.8rem);
     color: #9ca3af;
     display: flex;
     flex-direction: column;
@@ -479,8 +482,8 @@ body {
     position: absolute;
     bottom: 4%;
     right: 4%;
-    width: clamp(35px, 6vw, 48px);
-    height: clamp(35px, 6vw, 48px);
+    width: clamp(35px, 6cqw, 48px);
+    height: clamp(35px, 6cqw, 48px);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -550,4 +553,71 @@ body {
     20%, 80% { transform: translate3d(5px, 0, 0); }
     30%, 50%, 70% { transform: translate3d(-7px, 0, 0); }
     40%, 60% { transform: translate3d(7px, 0, 0); }
+}
+
+/* ==========================================================================
+   TELA DE AVISO DE ORIENTAÇÃO (CELULAR RETRATO)
+   ========================================================================== */
+.orientation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0b0b0f;
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.orientation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.orientation-content h2 {
+    font-size: 1.8rem;
+    color: #fbbf24;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.orientation-content p {
+    font-size: 1rem;
+    color: #9ca3af;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
+.phone-icon-wrapper {
+    animation: rotatePhone 2.5s infinite ease-in-out;
+    margin-bottom: 10px;
+}
+
+.phone-icon {
+    width: 80px;
+    height: 80px;
+    color: #fbbf24;
+}
+
+@keyframes rotatePhone {
+    0% { transform: rotate(0deg); }
+    40% { transform: rotate(-90deg); }
+    70% { transform: rotate(-90deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Mostrar aviso de rotação em telas móveis e tablets quando em portrait */
+@media (max-width: 1024px) and (orientation: portrait) {
+    .orientation-overlay {
+        display: flex;
+    }
 }
