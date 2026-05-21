@@ -14,7 +14,7 @@ const scriptData = [
         state: 2,
         bg: 'assets/img/bg_prologo.png',
         speaker: 'Brenda',
-        text: 'Ugh... nossa cabeça... Onde nós estamos? Isso não se parece com o IFSC...',
+        text: 'Ugh... minha cabeça... Onde eu estou? Isso não se parece com o IFSC...',
         charLeft: 'brenda',
         charRight: 'none',
         activeSpeaker: 'left',
@@ -24,7 +24,7 @@ const scriptData = [
         state: 2,
         bg: 'assets/img/bg_prologo.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Vocês acharam que poderiam ignorar a geometria? Bem-vindos ao Mundo Retilíneo!',
+        text: 'Você achou que poderia ignorar a geometria? Bem-vinda ao Mundo Retilíneo!',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -34,7 +34,7 @@ const scriptData = [
         state: 2,
         bg: 'assets/img/bg_prologo.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Para voltar ao mundo real, vocês terão que me provar que dominam as retas. Preparem-se para o primeiro portão!',
+        text: 'Para voltar ao mundo real, você terá que me provar que domina as retas. Prepare-se para o primeiro portão!',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -48,7 +48,7 @@ const scriptData = [
         state: 3,
         bg: 'assets/img/bg_conceito1.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Antes de testar vocês, devem compreender a base da realidade. Duas retas são paralelas se estiverem no mesmo plano e nunca compartilharem um único ponto.',
+        text: 'Antes de testar você, deve compreender a base da realidade. Duas retas são paralelas se estiverem no mesmo plano e nunca compartilharem um único ponto.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -121,7 +121,7 @@ const scriptData = [
         state: 5,
         bg: 'assets/img/bg_conceito2.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Passaram... Mas o universo nem sempre é paralelo. Às vezes, os caminhos colidem em um único ponto: as Retas Concorrentes.',
+        text: 'Passou... Mas o universo nem sempre é paralelo. Às vezes, os caminhos colidem em um único ponto: as Retas Concorrentes.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -194,7 +194,7 @@ const scriptData = [
         state: 7,
         bg: 'assets/img/bg_ato3.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Se a minha reta tem a equação y = 1/2x + 3, qual deve ser a equação da reta de vocês para ser perpendicular e passar na origem (0,0)?',
+        text: 'Se a minha reta tem a equação y = 1/2x + 3, qual deve ser a equação da sua reta para ser perpendicular e passar na origem (0,0)?',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -207,13 +207,13 @@ const scriptData = [
     },
 
     // ----------------------------------------------------------------------
-    // ESTADO 8: FINAL BOSS - O Paradoxo do ENEM
+    // ESTADO 8: FINAL BOSS - O Paradoxo Final
     // ----------------------------------------------------------------------
     {
         state: 8,
         bg: 'assets/img/bg_ato3.png',
         speaker: 'Professora Ana Vilã',
-        text: 'Tolos! Pensaram que as continhas simples seriam o fim? O mundo real é muito mais complexo. Preparem-se para o teste nacional!',
+        text: 'Tola! Pensou que as continhas simples seriam o fim? O mundo real é muito mais complexo. Prepare-se para o teste nacional!',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -225,7 +225,7 @@ const scriptData = [
         state: 8,
         bg: 'assets/img/bg_ato3.png',
         speaker: 'Professora Ana Vilã',
-        text: '(Adaptação ENEM) Dois engenheiros planejaram duas avenidas retilíneas. A Avenida A segue a equação 2x - y + 3 = 0.',
+        text: 'Dois engenheiros planejaram duas avenidas retilíneas. A Avenida A segue a equação 2x - y + 3 = 0.',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -266,7 +266,7 @@ const scriptData = [
         state: 8,
         bg: 'assets/img/bg_ato3.png',
         speaker: 'Professora Ana Vilã',
-        text: 'IMPOSSÍVEL! Vocês isolaram o \'y\' e perceberam que ambas tinham a inclinação igual a 2?! Vocês dominam completamente a geometria...',
+        text: 'IMPOSSÍVEL! Você isolou o \'y\' e percebeu que ambas tinham a inclinação igual a 2?! Você domina completamente a geometria...',
         charLeft: 'brenda',
         charRight: 'ana_vila',
         activeSpeaker: 'right',
@@ -293,7 +293,7 @@ const scriptData = [
         state: 9,
         bg: 'assets/img/bg_inicial.jpeg', // Retorna ao fundo inicial
         speaker: 'Brenda',
-        text: 'Em um piscar de olhos, voltamos para a sala...',
+        text: 'Em um piscar de olhos, voltei para a sala...',
         charLeft: 'none',
         charRight: 'none',
         activeSpeaker: 'none',
@@ -327,7 +327,7 @@ let gameState = {
 // Mapeamento de caminhos reais de sprites dos personagens
 const charSprites = {
     davi: 'assets/img/char_davi.png',
-    brenda: 'assets/img/char_brenda.png',
+    brenda: 'assets/img/char_brenda_medo.png',
     ana_vila: 'assets/img/char_ana_vila.png',
     none: ''
 };
@@ -350,6 +350,7 @@ const dom = {
     gameOverScreen: document.getElementById('gameOverScreen'),
     finalizationScreen: document.getElementById('finalizationScreen'),
     contentModal: document.getElementById('contentModal'),
+    rulesModal: document.getElementById('rulesModal'),
     
     // Caixa de diálogo
     dialogueContainer: document.getElementById('dialogueContainer'),
@@ -359,7 +360,9 @@ const dom = {
     // Botões
     btnIniciar: document.getElementById('btnIniciar'),
     btnConteudo: document.getElementById('btnConteudo'),
+    btnRegras: document.getElementById('btnRegras'),
     btnCloseModal: document.getElementById('btnCloseModal'),
+    btnCloseRulesModal: document.getElementById('btnCloseRulesModal'),
     btnVolume: document.getElementById('btnVolume'),
     volIcon: document.getElementById('volIcon'),
     
@@ -593,6 +596,8 @@ function startDialogueGame() {
     dom.introVideo.classList.add('hide');
     dom.gameOverScreen.classList.add('hide');
     dom.finalizationScreen.classList.add('hide');
+    dom.rulesModal.classList.add('hide');
+    dom.contentModal.classList.add('hide');
     dom.gameContainer.classList.remove('boss-theme');
     dom.gameContainer.classList.remove('shake-anim');
     
@@ -696,8 +701,16 @@ function setupEventListeners() {
         dom.contentModal.classList.remove('hide');
     };
 
+    dom.btnRegras.onclick = () => {
+        dom.rulesModal.classList.remove('hide');
+    };
+
     dom.btnCloseModal.onclick = () => {
         dom.contentModal.classList.add('hide');
+    };
+
+    dom.btnCloseRulesModal.onclick = () => {
+        dom.rulesModal.classList.add('hide');
     };
 
     // Controle de Volume
@@ -718,7 +731,8 @@ function setupEventListeners() {
         if (gameState.currentState >= 2 && 
             dom.gameOverScreen.classList.contains('hide') && 
             dom.finalizationScreen.classList.contains('hide') &&
-            dom.contentModal.classList.contains('hide')) {
+            dom.contentModal.classList.contains('hide') &&
+            dom.rulesModal.classList.contains('hide')) {
             advanceGame();
         }
     };
@@ -753,6 +767,7 @@ function preloadGameAssets() {
         'assets/img/btn_alt_c.png',
         'assets/img/btn_iniciar.png',
         'assets/img/btn_conteudo.png',
+        'assets/img/btn_regras.png',
         'assets/img/banner_fim_jogo.png',
         'assets/img/banner_finalizacao.png',
         'assets/img/btn_vol_on.png',

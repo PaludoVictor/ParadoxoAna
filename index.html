@@ -52,6 +52,7 @@
             <p class="game-subtitle">Uma Aventura de Geometria Analítica</p>
             <div class="menu-buttons">
                 <button class="menu-btn" id="btnIniciar" style="background-image: url('assets/img/btn_iniciar.png');"></button>
+                <button class="menu-btn" id="btnRegras" style="background-image: url('assets/img/btn_regras.png');"></button>
                 <button class="menu-btn" id="btnConteudo" style="background-image: url('assets/img/btn_conteudo.png');"></button>
             </div>
         </div>
@@ -115,42 +116,83 @@
                 <div class="bento-grid">
                     <!-- Bloco 1: Retas Paralelas -->
                     <div class="bento-card">
-                        <h3>1. Retas Paralelas & Transversais</h3>
-                        <p>Retas paralelas nunca se cruzam ($m_1 = m_2$). Quando cortadas por uma transversal:</p>
+                        <h3>1. Retas Paralelas e Transversais</h3>
+                        <p>Retas paralelas nunca se cruzam (m1 = m2). Quando cortadas por uma transversal:</p>
                         <ul>
                             <li><strong>Ângulos Correspondentes:</strong> Ocupam a mesma posição relativa e são iguais.</li>
-                            <li><strong>Ângulos Alternos Internos:</strong> Estão em lados opostos da transversal na parte interna e <strong>são iguais</strong>.</li>
-                            <li><em>Exemplo:</em> Se dois alternos internos medem $5x - 20^\circ$ e $3x + 40^\circ$, então:<br>
-                            $5x - 20 = 3x + 40 \implies 2x = 60 \implies x = 30$.<br>
-                            Substituindo: $5(30) - 20 = 130^\circ$.</li>
+                            <li><strong>Ângulos Alternos Internos:</strong> Estão em lados opostos da transversal na parte interna e são iguais.</li>
+                            <li><em>Exemplo:</em> Se dois alternos internos medem 5x - 20° e 3x + 40°, então:<br>
+                            5x - 20 = 3x + 40 => 2x = 60 => x = 30.<br>
+                            Substituindo: 5(30) - 20 = 130°.</li>
                         </ul>
                     </div>
 
                     <!-- Bloco 2: Retas Concorrentes -->
                     <div class="bento-card">
                         <h3>2. Retas Concorrentes</h3>
-                        <p>Retas concorrentes possuem coeficientes angulares diferentes ($m_1 \neq m_2$) e se cruzam em um <strong>único ponto exato</strong> $(x, y)$.</p>
+                        <p>Retas concorrentes possuem coeficientes angulares diferentes (m1 diferente de m2) e se cruzam em um único ponto exato (x, y).</p>
                         <ul>
-                            <li>Para encontrar o ponto de colisão, igualamos as equações das duas retas: $y_1 = y_2$.</li>
-                            <li><em>Exemplo:</em> $y = 2x + 1$ e $y = -x + 4$<br>
-                            $2x + 1 = -x + 4 \implies 3x = 3 \implies x = 1$.<br>
-                            Substituindo $x=1$ na primeira equação:<br>
-                            $y = 2(1) + 1 = 3$.<br>
-                            Ponto de colisão: <strong>$(1, 3)$</strong>.</li>
+                            <li>Para encontrar o ponto de colisão, igualamos as equações das duas retas: y1 = y2.</li>
+                            <li><em>Exemplo:</em> y = 2x + 1 e y = -x + 4<br>
+                            2x + 1 = -x + 4 => 3x = 3 => x = 1.<br>
+                            Substituindo x=1 na primeira equação:<br>
+                            y = 2(1) + 1 = 3.<br>
+                            Ponto de colisão: (1, 3)</li>
                         </ul>
                     </div>
 
                     <!-- Bloco 3: Retas Perpendiculares -->
                     <div class="bento-card">
                         <h3>3. Retas Perpendiculares</h3>
-                        <p>Retas concorrentes que se cruzam formando um ângulo reto de $90^\circ$.</p>
+                        <p>Retas concorrentes que se cruzam formando um ângulo reto de 90°.</p>
                         <ul>
-                            <li><strong>Regra do Coeficiente:</strong> O produto de seus coeficientes angulares deve ser igual a $-1$:<br>
-                            $m_1 \cdot m_2 = -1 \implies m_2 = -\frac{1}{m_1}$ (inverso negativo).</li>
-                            <li><em>Exemplo:</em> Se a reta original tem $m_1 = 1/2$, a perpendicular terá coeficiente:<br>
-                            $m_2 = -\frac{1}{1/2} = -2$.</li>
-                            <li>Se passa pela origem $(0,0)$, a equação reduzida é:<br>
-                            $y = -2x$.</li>
+                            <li><strong>Regra do Coeficiente:</strong> O produto de seus coeficientes angulares deve ser igual a -1:<br>
+                            m1 . m2 = -1 => m2 = -1/m1 (inverso negativo).</li>
+                            <li><em>Exemplo:</em> Se a reta original tem m1 = 1/2, a perpendicular terá coeficiente:<br>
+                            m2 = -1/1/2 = -2.</li>
+                            <li>Se passa pela origem (0,0), a equação reduzida é:<br>
+                            y = -2x.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL DE REGRAS (BENTO GRID MODERNO) -->
+        <div class="modal-overlay hide" id="rulesModal">
+            <div class="modal-content">
+                <button class="close-modal-btn" id="btnCloseRulesModal">&times;</button>
+                <h2 class="modal-title">Regras do Jogo: O Paradoxo de Ana</h2>
+                <p class="modal-intro">Entenda o funcionamento do jogo antes de iniciar sua jornada pelo Mundo Retilíneo!</p>
+                
+                <div class="bento-grid">
+                    <!-- Bloco 1: Objetivo Principal -->
+                    <div class="bento-card">
+                        <h3>1. Objetivo do Jogo</h3>
+                        <p>Você joga como Brenda, que foi transportada para o Mundo Retilíneo pela Professora Ana Vilã.</p>
+                        <ul>
+                            <li><strong>Missão:</strong> Responder corretamente aos desafios de Geometria Analítica nos portões dimensionais.</li>
+                            <li><strong>Vitória:</strong> Derrotar a Professora Ana Vilã no desafio final e abrir o portal de volta ao mundo real!</li>
+                        </ul>
+                    </div>
+
+                    <!-- Bloco 2: Como Jogar -->
+                    <div class="bento-card">
+                        <h3>2. Diálogos e Desafios</h3>
+                        <p>A aventura é estruturada como uma Visual Novel (Novela Visual) interativa:</p>
+                        <ul>
+                            <li><strong>Avanço de Diálogos:</strong> Clique na caixa de diálogo ou no palco do jogo para avançar o texto.</li>
+                            <li><strong>Fórmulas e Dicas:</strong> Fique atenta às falas da Professora Ana Vilã, pois ela explica os conceitos antes dos desafios!</li>
+                        </ul>
+                    </div>
+
+                    <!-- Bloco 3: Alternativas e Vida -->
+                    <div class="bento-card">
+                        <h3>3. Combates e Game Over</h3>
+                        <p>Em cada portão dimensional, você precisará resolver um problema e escolher entre as alternativas A, B ou C:</p>
+                        <ul>
+                            <li><strong>Acerto:</strong> A história avança para o próximo portão dimensional ou explicação.</li>
+                            <li><strong>Erro:</strong> É Fim de Jogo (Game Over)! Mas você pode clicar em <strong>Tentar Novamente</strong> para refazer a última pergunta sem perder seu progresso.</li>
                         </ul>
                     </div>
                 </div>
